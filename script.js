@@ -47,6 +47,7 @@ const fonts = [
     "font-family: 'Kelsi', sans-serif;",
     "font-family: 'Kelsi Fill', sans-serif;",
     "font-family: 'Vertigo', sans-serif;",
+    "font-family: 'Rougher', sans-serif;",
 ]
 
 var title1 = document.querySelector("#title1");
@@ -54,6 +55,9 @@ var fontPicker = document.querySelector("#font-picker");
 var colorPicker = document.querySelector("#color-picker");
 var el1 = document.querySelector("#color-1");
 var fontSample = document.querySelector("#font-sample");
+const abcd = (color = "#000000") => {
+    return `<h1 style="${fonts[fontPicker.value]}; color: ${color}">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Ññ Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</h1>`
+}
 
 fonts.forEach((e, index) => {
     fontPicker.innerHTML += `<option style="${e}" value="${index}">${e}</option>`
@@ -68,12 +72,12 @@ colors[colorPicker.value].forEach(el =>{
 })
 
 title1.innerHTML = `<h2 style="${fonts[0]}">Title</h2>`;
-fontSample.innerHTML = `<h1 style="${fonts[fontPicker.value]}">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</h1>`;
+fontSample.innerHTML = abcd();
 
 const fontChange = () => {
     title1.innerHTML = `<h2 style="${fonts[fontPicker.value]}">Title</h2>`
     el1.innerHTML = "";
-    fontSample.innerHTML = `<h1 style="${fonts[fontPicker.value]}">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</h1>`;
+    fontSample.innerHTML = abcd();
     colors[colorPicker.value].forEach( el => {
         el1.innerHTML += `<div style="background-color: ${el}; aspect-ratio: 1/1; ${fonts[fontPicker.value]}" onclick="colorFontChange('${el}')"><h4>${el}</h4></div>`
     });
@@ -96,5 +100,5 @@ const colorOption = (e) => {
 }
 
 const colorFontChange = (color) => {
-    fontSample.innerHTML = `<h1 style="${fonts[fontPicker.value]}; color: ${color}">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</h1>`
+    fontSample.innerHTML = abcd(color);
 }
