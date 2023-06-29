@@ -64,4 +64,15 @@
 
 #font-sample h1 {
   font-size: 3rem;
+}
+
+#card {
+  background-image: url("../assets/images/5337447.jpg");
+}
+#card #card-title {
+  font-weight: 400;
+  font-size: 4rem;
+  font-family: Okemo;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */

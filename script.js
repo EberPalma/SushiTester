@@ -58,6 +58,8 @@ var fontSample = document.querySelector("#font-sample");
 const abcd = (color = "#000000") => {
     return `<h1 style="${fonts[fontPicker.value]}; color: ${color}">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Ññ Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</h1>`
 }
+var card = document.querySelector("#card");
+var cardTitle = document.querySelector("#card-title");
 
 fonts.forEach((e, index) => {
     fontPicker.innerHTML += `<option style="${e}" value="${index}">${e}</option>`
